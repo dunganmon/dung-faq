@@ -1,116 +1,158 @@
 @font-face {
-    font-family: 'Anton';
-    src: url('Anton-Regular.ttf') format('truetype');
+    font-family: 'Anton'; 
+    src: url('Anton-Regular.ttf') format('truetype'); 
 }
+
 @font-face {
-    font-family: 'Montserrat';
-    src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-family: 'Montserrat'; 
+    src: url('Montserrat-VariableFont_wght.ttf') format('truetype'); 
 }
+
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', 'Anton'; 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Montserrat', 'Anton';
 }
+
+
 body {
-    background-color: #FFFFFF;
-    padding: 40px 5px;
-
+    background-color: #FFFFFF; 
+    padding: 40px 5px; 
 }
 
-.vdung-container{
-    width: 100%; /*chiều ngang rộng bằng 100% phần tử cha*/
-    max-width: 1440px;
-    min-height: 726px;
-    margin: 0 auto;
-    background-color: #FFFFFF;
-    border-radius: 50px;
-    padding: 0 0px 40px 0px; /*40 là ở dưới*/
-    border: 1px solid #004812;
-    position: relative;
-    overflow: hidden;
-}
-h1{
-    font-family: 'Anton';
-    color: #FFFFFF;
-    
-    font-size: 60px;
-}
-.vdung-header {
-    margin: 0;
-    
-    text-align: center;
-    font-family: 'Anton';  
-    background-color: #007724;
-    padding: 15px 0;
-}
-.vdung-list {
-    display: flex;
-    flex-direction: column;
+
+.vdung-box {
     width: 100%; 
-    align-items: center;
-    margin-top: 20px;
+    max-width: 2000px;
+    min-height: 726px; 
+    margin: 0 auto; 
+    background-color: #FFFFFF; 
+    border-radius: 50px; 
+    padding: 0 0 40px 0; 
+    border: 1px solid #004812; 
+    position: relative;
+    overflow: hidden; 
 }
-.vdung-item{
-    
-    background-color: #EFFFF1;
-    width: 90%;
-    max-width: 1057px; 
-    margin-bottom: 5px;
-    padding: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    height: 70px;  /*đặt chiều cao ban đầu là 70 để chỉ hiện câu hỏi*/
-    overflow: hidden;  
+
+
+h1 {
+    font-family: 'Anton'; 
+    color: #FFFFFF; 
+    font-size: 60px; 
 }
-.vdung-item:hover {
-    height: auto;
-    box-shadow: 0 5px 15px rgba(0, 72, 18, 0.2);
+
+.vdung-top {
+    text-align: center;
+    background-color: #007724; 
+    padding: 15px 0; 
 }
-.vdung-question {
-    font-family: 'Montserrat';
-    font-size: 24px;
-    color: #007724;
+
+
+.vdung-lst {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    align-items: center; 
+    margin-top: 20px; 
+}
+
+
+.vdung-row {
+    background-color: #EFFFF1; 
+    width: 95%; 
+    max-width: 1200px; 
+    margin-bottom: 5px; 
+    padding: 20px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    border-radius: 5px; 
+    overflow: hidden; 
+    position: relative; 
+}
+
+
+.vdung-ask {
+    font-size: 24px;     
+    color: #007724; 
+    margin-bottom: 10; 
+    font-weight: normal; 
+}
+
+
+.vdung-rep {
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 0.5s ease, margin-top 0.5s ease; 
+}
+
+
+.toggle-target {
+    position: absolute; 
+    width: 100%;
+    height: 100%; 
+    top: 0;
+    left: 0; 
+    opacity: 0;
+    cursor: pointer; 
+}
+
+
+.vdung-row:focus-within,
+.vdung-row:active,
+.vdung-row:target {
+    background-color: #FFFFFF; 
+    box-shadow: 0 5px 15px rgba(0, 72, 18, 0.2); 
+    height: auto; 
+}
+
+
+.vdung-row:focus-within .vdung-rep,
+.vdung-row:active .vdung-rep,
+.vdung-row:target .vdung-rep {
+    max-height: 1000px; 
+    margin-top: 10px; 
+}
+
+
+.vdung-row:focus-within .vdung-ask,
+.vdung-row:active .vdung-ask,
+.vdung-row:target .vdung-ask {
     margin-bottom: 10px;
-    font-weight: normal;
 }
-.vdung-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-}
-.vdung-item:hover .vdung-answer {
-    max-height: 1000px;
-   
-}
-.vdung-item:hover {
-    border-radius: 5px;
-    background-color: #FFFFFF;
-}
-.vdung-answer-text {
-    font-family: 'Montserrat';
-    white-space: pre-wrap; /*Giữ nguyên các khoảng trắng và dòng mới trong văn bản, đồng thời cho phép văn bản xuống dòng khi cần.*/
+
+
+.vdung-txt {
+    white-space: pre-wrap; 
     font-size: 16px;
-    line-height: 1.5;
-    padding-top: 10px;
-    color: #007724;
-    padding-left: 45px;
+    line-height: 1.5; 
+    padding-top: 10px; 
+    color: #007724; 
+    padding-left: 45px; 
 }
+
+
 @media screen and (max-width: 768px) {
-    .vdung-container {
-        border-radius: 30px;
-        padding: 0 0px 20px 0px;
+    .vdung-box {
+        border-radius: 30px; 
+        padding: 0 0 20px 0; 
     }
     
     h1 {
-        font-size: 40px;
+        font-size: 40px; 
     }
     
-    .vdung-question {
-        font-size: 20px;
+    .vdung-ask {
+        font-size: 20px; 
     }
     
-    .vdung-item {
-        padding: 15px;
-        height: 60px;
-    }}
+    .vdung-row {
+        padding: 15px; 
+        width: 98%; 
+    }
+    
+    .vdung-txt {
+        padding-left: 20px; 
+    }
+}
