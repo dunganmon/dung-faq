@@ -80,7 +80,6 @@ h1 {
     font-weight: normal; 
 }
 
-
 .vdung-rep {
     max-height: 0; 
     overflow: hidden; 
@@ -90,11 +89,11 @@ h1 {
 
 .toggle-target {
     position: absolute; 
-    width: 100%;
+    width: 100%; 
     height: 100%; 
     top: 0;
     left: 0; 
-    opacity: 0;
+    opacity: 0; 
     cursor: pointer; 
 }
 
@@ -119,7 +118,7 @@ h1 {
 .vdung-row:focus-within .vdung-ask,
 .vdung-row:active .vdung-ask,
 .vdung-row:target .vdung-ask {
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
 }
 
 
@@ -128,7 +127,7 @@ h1 {
     font-size: 16px;
     line-height: 1.5; 
     padding-top: 10px; 
-    color: #007724; 
+    color: #007724;
     padding-left: 45px; 
 }
 
